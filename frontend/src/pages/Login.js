@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Login.css'
+import { ReactTyped } from 'react-typed';
+import '../styles/Login.css';
 
 export default function Login() {
+    const text = [".math"];
     return (
         <div className='root'>
             <div className='left'>
-                <h1>.math</h1>
+                <h1><ReactTyped strings={text}  typeSpeed={190} backSpeed={190} cursorChar='_' loop/>
+                </h1>
             </div>
             <div className='right'>
                 <form action="#">
