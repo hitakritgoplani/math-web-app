@@ -8,12 +8,13 @@ export default function Login() {
     return (
         <div className='root'>
             <div className='left'>
-                <h1><ReactTyped strings={text}  typeSpeed={190} backSpeed={190} cursorChar='_' loop/>
+                <h1><ReactTyped className='math' strings={text}  typeSpeed={190} backSpeed={190} cursorChar='' loop/>
                 </h1>
+                <span><ReactTyped className="cur" strings={[""]}  typeSpeed={190} backSpeed={190} cursorChar='|' loop/></span>
             </div>
             <div className='right'>
                 <form action="#">
-                    <h2 id="login">Welcome back !</h2>
+                    <h2 id="login">Hello👋, Welcome back !</h2>
                     <label>
                         Enter your email:<br />
                         <input id="email" type="text" placeholder="Enter Email" />

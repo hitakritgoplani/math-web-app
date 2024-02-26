@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     font-size: 5rem;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .right{
@@ -82,6 +82,14 @@ input:not(.btn){
 }
 .btn:hover{
 	background-color: #7b7bee;
+}
+
+.math{
+    font-weight: bold;
+}
+
+.cur{
+    font-size: 8rem;
 }
 
 @media screen and (max-width: 768px) {

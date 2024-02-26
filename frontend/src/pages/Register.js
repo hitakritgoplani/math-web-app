@@ -10,7 +10,7 @@ export default function Register() {
             </div>
             <div className='right'>
                 <form action="#">
-                    <h2 id="login">Welcome back !</h2>
+                    <h2 id="login">Hello👋, Welcome !</h2>
                     <label>
                         Enter your email:<br />
                         <input id="email" type="text" placeholder="Enter Email" />
