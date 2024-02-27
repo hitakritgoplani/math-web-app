@@ -1,12 +1,3 @@
-.answer-root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 155px;
-    background-color: #EDB5BD;
-    width: 100%;
-}
-
 .answer-input {
     border: 2px black solid;
     border-radius: 10px;
