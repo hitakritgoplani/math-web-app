@@ -13,17 +13,17 @@ export default function Register() {
                     <h2 id="login">Hello👋, Welcome !</h2>
                     <label>
                         Enter your email:<br />
-                        <input id="email" type="text" placeholder="Enter Email" />
+                        <input className="input-login" id="email" type="text" placeholder="Enter Email" />
                     </label>
 
                     <label>
                         Enter your password:<br />
-                        <input id="password" type="password" placeholder="Enter password" />
+                        <input className="input-login" id="password" type="password" placeholder="Enter password" />
                     </label>
 
                     <label>
                         Enter your name:<br />
-                        <input id="nickname" type="text" placeholder="Enter name" />
+                        <input className="input-login" id="nickname" type="text" placeholder="Enter name" />
                     </label>
 
                     <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/home'} />
