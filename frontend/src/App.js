@@ -20,7 +20,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home/>} />
           <Route path="/addition" element={<Add/>} />
-          <Route path="/multiply" element={<Multiply/>} /> 
+          <Route path="/multiplication" element={<Multiply/>} /> 
           <Route path='/counting' element={<Count />} /> 
           <Route path='/comparison' element={<Compare />} /> 
           <Route path='/settings' element={<Settings />} />

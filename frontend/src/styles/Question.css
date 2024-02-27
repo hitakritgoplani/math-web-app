@@ -1,0 +1,15 @@
+.question-root{
+    background-color: #EDEDED;
+    /* padding: 2px; */
+    /* margin:17px; */
+    width: 20vw;
+    height: 35vh;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+}
+

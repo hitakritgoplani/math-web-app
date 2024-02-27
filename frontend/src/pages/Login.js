@@ -17,12 +17,12 @@ export default function Login() {
                     <h2 id="login">Hello👋, Welcome back !</h2>
                     <label>
                         Enter your email:<br />
-                        <input id="email" type="text" placeholder="Enter Email" />
+                        <input className='input-login' id="email" type="text" placeholder="Enter Email" />
                     </label>
 
                     <label>
                         Enter your password:<br />
-                        <input id="password" type="password" placeholder="Enter password" />
+                        <input className="input-login" id="password" type="password" placeholder="Enter password" />
                     </label>
 
                     <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/home'} />

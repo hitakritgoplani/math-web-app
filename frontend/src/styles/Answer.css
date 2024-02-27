@@ -1,0 +1,25 @@
+.answer-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    background-color: #EDB5BD;
+    width: 100%;
+}
+
+.answer-input {
+    border: 2px black solid;
+    border-radius: 10px;
+    text-align: center;
+    width: 35vw;
+    height: 25vh;
+    font-size: 8rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    /* font-weight: bold; */
+    color: red;
+}
+
+.answer-input::placeholder{
+    color: grey;
+    font-size: 6rem;
+}

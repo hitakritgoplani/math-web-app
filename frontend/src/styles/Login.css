@@ -51,7 +51,7 @@ label, h2{
 	color: black;
 }
 
-input:not(.btn){
+.input-login{
 	width: 375px;
 	height: 45px;
 	border: 1px solid #9C9CDD;

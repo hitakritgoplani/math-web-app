@@ -1,13 +1,13 @@
 import React from 'react'
 import Tile from '../components/Tile';
 import '../styles/Home.css'
+import Header from '../components/Header';
+
 
 export default function Home() {
     return (
         <div className='home-root'>
-            <header className="App-header">
-                <h1><strong>.math</strong></h1>
-            </header>
+            <Header />
             <div className='home-content'>
                 <div className='top'>
                     <Tile hoverColor="#8080ee" name="addition" color="#9C9CDD"></Tile>

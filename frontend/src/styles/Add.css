@@ -1,0 +1,25 @@
+.add-root{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-question{
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+    height: 50vh;
+	background-color: #9C9CDD;
+	width: 100%;
+}
+
+.add-answer{
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    height: 40vh;
+	background-color: #EDB5BD;
+	width: 100%;
+}
