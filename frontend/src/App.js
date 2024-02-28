@@ -7,6 +7,7 @@ import Multiply from './pages/Multiply';
 import Compare from './pages/Comparison';
 import Count from './pages/Counting';
 import Settings from './pages/Settings';
+import Modes from './pages/Modes';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path='/modes' element={<Modes />} />
           <Route path="/home" element={<Home/>} />
           <Route path="/addition" element={<Add/>} />
           <Route path="/multiplication" element={<Multiply/>} /> 

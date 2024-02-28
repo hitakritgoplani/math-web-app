@@ -26,7 +26,7 @@ export default function Register() {
                         <input className="input-login" id="nickname" type="text" placeholder="Enter name" />
                     </label>
 
-                    <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/home'} />
+                    <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
                     <Link to="/register"><a href=''>Not registered ? </a></Link>
                 </form>
             </div>

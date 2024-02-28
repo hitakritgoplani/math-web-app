@@ -25,7 +25,7 @@ export default function Login() {
                         <input className="input-login" id="password" type="password" placeholder="Enter password" />
                     </label>
 
-                    <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/home'} />
+                    <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
                     <Link to="/register"><a href=''>Not registered ? </a></Link>
                 </form>
             </div>
