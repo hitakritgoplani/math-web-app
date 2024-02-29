@@ -24,7 +24,7 @@ export default function Add() {
             <div className='add-root'>
                 <div className='add-question'>
                     <Question number={question1}/>
-                    <div style={{fontSize:"15rem"}}><strong>+</strong></div>
+                    <div style={{textAlign:"center", height:"inherit", fontSize:"15vw"}}><strong>&#43;</strong></div>
                     <Question number={question2}/>
                 </div>
                 <Line />

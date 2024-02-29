@@ -7,3 +7,12 @@ header{
     color: white;
     font-size: 1.5rem;
 }
+
+.math-heading{
+    color: white;
+    text-decoration: none;
+}
+
+.math-heading:hover{
+    color: #EDB5BD;
+}
