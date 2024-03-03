@@ -10,12 +10,12 @@ export default function Home() {
             <Header />
             <div className='home-content'>
                 <div className='top'>
-                    <Tile hoverColor="#8080ee" name="addition" color="#9C9CDD"></Tile>
-                    <Tile hoverColor="#f58d9c" name="counting" color="#EDB5BD"></Tile>
+                    <Tile hoverColor="#f58d9c" name="addition" color="#EDB5BD"></Tile>
+                    <Tile hoverColor="#8080ee" name="counting" color="#9C9CDD"></Tile>
                 </div>
                 <div className='bottom'>
-                    <Tile hoverColor="#f58d9c" name="multiplication" color="#EDB5BD"></Tile>
-                    <Tile hoverColor="#8080ee" name="comparison" color="#9C9CDD"></Tile>
+                    <Tile hoverColor="#8080ee" name="multiplication" color="#9C9CDD"></Tile>
+                    <Tile hoverColor="#f58d9c" name="comparison" color="#EDB5BD"></Tile>
                 </div>
             </div>
         </div>

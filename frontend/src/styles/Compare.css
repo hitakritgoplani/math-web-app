@@ -1,0 +1,28 @@
+.compare-root{
+    height: 90vh;
+    display: flex;
+}
+
+.compare-question{
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	background-color: #9C9CDD;
+	width: 50%;
+}
+
+#one{
+    background-color: #EDB5BD;
+}
+
+.signs{
+    display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items:center ;
+	width: 0px; 
+    z-index: 1;
+}
+
+
