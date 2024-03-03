@@ -1,14 +1,16 @@
 .operator-root{
-    background-color: black;
+    background-color: #638889;
     width: 10vw;
     height: 20vh;
 	border-radius: 10px;
-	border: 1px solid black;
+	border: 1px solid #638889;
 	color: white;
     text-align: center;
 	cursor: pointer;
     font-size: 5vw;
+    /* border: 1px black solid; */
 	transition: transform 0.1s ease-in-out;
+    box-shadow: black -5px 5px;
 }
 
 .operator-root:active{

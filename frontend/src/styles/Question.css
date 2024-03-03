@@ -1,5 +1,5 @@
 .question-root{
-    background-color: #EDEDED;
+    background-color: #F9EFDB;
     /* padding: 2px; */
     /* margin:17px; */
     width: 20vw;
@@ -11,5 +11,6 @@
     align-items: center;
     font-size: 4vw;
     font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    box-shadow: black -5px 5px;
 }
 

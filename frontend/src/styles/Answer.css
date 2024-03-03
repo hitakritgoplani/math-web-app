@@ -8,6 +8,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
     /* font-weight: bold; */
     color: red;
+    box-shadow: black -10px 10px;
 }
 
 .answer-input::placeholder{
