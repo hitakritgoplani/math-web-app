@@ -14,19 +14,19 @@ export default function Login() {
             </div>
             <div className='right'>
                 <form action="#">
-                    <h2 id="login">Hello👋, Welcome back !</h2>
+                    <h2 id="login">hello👋, welcome back !</h2>
                     <label>
-                        Enter your email:<br />
-                        <input className='input-login' id="email" type="text" placeholder="Enter Email" />
+                        enter your email:<br />
+                        <input className='input-login' id="email" type="text" placeholder="enter email" />
                     </label>
 
                     <label>
-                        Enter your password:<br />
-                        <input className="input-login" id="password" type="password" placeholder="Enter password" />
+                        enter your password:<br />
+                        <input className="input-login" id="password" type="password" placeholder="enter password" />
                     </label>
 
-                    <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
-                    <Link to="/register"><a href=''>Not registered ? </a></Link>
+                    <input className="btn" value="login" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
+                    <Link to="/register"><a style={{color:"black", fontSize:"1.2vw"}} href=''>not registered ? </a></Link>
                 </form>
             </div>
         </div>

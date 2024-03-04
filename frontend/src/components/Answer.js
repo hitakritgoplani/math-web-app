@@ -14,7 +14,7 @@ export default function Answer(props) {
     };
     return (
         <div className='answer-root'>
-            <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={handleKeyPress} className="answer-input" placeholder="Enter Answer" type="text" />
+            <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={handleKeyPress} className="answer-input" placeholder="Enter Answer" type="number" />
         </div>
 
     )

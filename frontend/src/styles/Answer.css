@@ -7,11 +7,17 @@
     font-size: 8rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
     /* font-weight: bold; */
-    color: red;
+    color: black;
     box-shadow: black -10px 10px;
 }
 
 .answer-input::placeholder{
     color: grey;
     font-size: 6rem;
+}
+
+.answer-input::-webkit-outer-spin-button,
+.answer-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

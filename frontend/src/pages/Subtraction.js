@@ -5,7 +5,7 @@ import Question from '../components/Question';
 import Line from '../components/Line';
 import Answer from '../components/Answer';
 
-export default function Add() {
+export default function Subtraction() {
     const [question1, setQuestion1] = useState(generateRandomNumber());
     const [question2, setQuestion2] = useState(generateRandomNumber());
 
@@ -22,13 +22,13 @@ export default function Add() {
         <div>
             <Header />
             <div className='add-root'>
-                <div className='add-question'>
+                <div style={{backgroundColor:"#EBD9B4"}} className='add-question'>
                     <Question number={question1}/>
-                    <div style={{textAlign:"center", textShadow:"black 5px 5px", color:"#EBD9B4", height:"inherit", fontSize:"15vw"}}><strong>&#43;</strong></div>
+                    <div style={{textAlign:"center", textShadow:"black -5px 5px", color:"#638889", height:"inherit", fontSize:"15vw"}}><strong>&#45;</strong></div>
                     <Question number={question2}/>
                 </div>
                 <Line />
-                <div className='add-answer'>
+                <div style={{backgroundColor:"#9DBC98"}}  className='add-answer'>
                     <Answer styles={{width:"10vw"}} onEnterPressed={handleEnterPressed}/>
                 </div>
             </div>

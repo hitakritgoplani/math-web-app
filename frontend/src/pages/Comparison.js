@@ -9,7 +9,7 @@ export default function Comparison() {
     const [question2, setQuestion2] = useState(generateRandomNumber());
 
     function generateRandomNumber() {
-        return Math.floor(Math.random() * 1001) + 1;
+        return Math.floor(Math.random() * 100) + 1;
     }
 
     function handleClickPressed() {

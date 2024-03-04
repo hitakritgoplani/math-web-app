@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import '../styles/Login.css'
 
 export default function Register() {
@@ -10,24 +9,24 @@ export default function Register() {
             </div>
             <div className='right'>
                 <form action="#">
-                    <h2 id="login">Hello👋, Welcome !</h2>
+                    <h2 id="login">hello👋, welcome !</h2>
                     <label>
-                        Enter your email:<br />
-                        <input className="input-login" id="email" type="text" placeholder="Enter Email" />
+                        enter your email:<br />
+                        <input className='input-login' id="email" type="text" placeholder="enter email" />
                     </label>
 
                     <label>
-                        Enter your password:<br />
-                        <input className="input-login" id="password" type="password" placeholder="Enter password" />
+                        enter your password:<br />
+                        <input className="input-login" id="password" type="password" placeholder="enter password" />
                     </label>
 
                     <label>
-                        Enter your name:<br />
-                        <input className="input-login" id="nickname" type="text" placeholder="Enter name" />
+                        enter your name:<br />
+                        <input className="input-login" id="nickname" type="text" placeholder="enter name" />
                     </label>
 
-                    <input className="btn" value="Login" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
-                    <Link to="/register"><a href=''>Not registered ? </a></Link>
+                    <input className="btn" value="register" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
+                    {/* <Link to="/register"><a href=''>Not registered ? </a></Link> */}
                 </form>
             </div>
         </div>

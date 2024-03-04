@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Add from './pages/Add';
 import Multiply from './pages/Multiply';
 import Compare from './pages/Comparison';
-import Count from './pages/Counting';
+import Subtraction from './pages/Subtraction';
 import Settings from './pages/Settings';
 import Modes from './pages/Modes';
 
@@ -23,7 +23,7 @@ function App() {
           <Route path="/home" element={<Home/>} />
           <Route path="/addition" element={<Add/>} />
           <Route path="/multiplication" element={<Multiply/>} /> 
-          <Route path='/counting' element={<Count />} /> 
+          <Route path='/subtraction' element={<Subtraction />} /> 
           <Route path='/comparison' element={<Compare />} /> 
           <Route path='/settings' element={<Settings />} />
         </Routes>

@@ -22,13 +22,13 @@ export default function Multiply() {
         <div>
             <Header />
             <div className='add-root'>
-                <div style={{backgroundColor:"#9C9CDD"}} className='add-question'>
+                <div style={{backgroundColor:"#EBD9B4"}} className='add-question'>
                     <Question number={question1}/>
-                    <div style={{textAlign:"center", height:"inherit", fontSize:"15vw"}}><strong>&times;</strong></div>
+                    <div style={{textAlign:"center", color:"#638889", textShadow:"black 5px 5px", height:"inherit", fontSize:"15vw"}}><strong>&times;</strong></div>
                     <Question number={question2}/>
                 </div>
                 <Line />
-                <div style={{backgroundColor:"#EDB5BD"}} className='add-answer'>
+                <div style={{backgroundColor:"#9DBC98"}} className='add-answer'>
                     <Answer styles={{width:"10vw"}} onEnterPressed={handleEnterPressed}/>
                 </div>
             </div>
