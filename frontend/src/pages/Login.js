@@ -17,12 +17,12 @@ export default function Login() {
                     <h2 id="login">hello👋, welcome back !</h2>
                     <label>
                         enter your email:<br />
-                        <input className='input-login' id="email" type="text" placeholder="enter email" />
+                        <input className='input-login' id="email" type="text" placeholder="enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
                     </label>
 
                     <label>
                         enter your password:<br />
-                        <input className="input-login" id="password" type="password" placeholder="enter password" />
+                        <input className="input-login" id="password" type="password" placeholder="enter password" onChange={(e)=>{setPassword(e.target.value)}}/>
                     </label>
 
                     <input className="btn" value="login" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
