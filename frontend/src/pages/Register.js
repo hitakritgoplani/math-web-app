@@ -1,21 +1,36 @@
-import React, { useState } from 'react'
-import '../styles/Login.css'
-import axios from axios;
+import React, { useState } from 'react';
+import '../styles/Login.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/users', {email, name, password})
-        .then(result=> console.log(result))
-        .catch(err=>console.log(err))
-
-    }
-
+        try {
+            const response = await axios.post('http://localhost:3001/register', {
+                email,
+                password,
+                name
+            });
+      
+            if (response.status === 200) {
+                console.log("Registration successful");
+                navigate("/modes");
+            } else {
+                console.log(response.data);
+                alert("Registration failed.");
+            }
+        } catch (error) {
+            console.error("Error while registration: ", error);
+            alert("Error while registering. Please try again.");
+        }
+    };
 
     return (
         <div className='root'>
@@ -24,7 +39,7 @@ export default function Register() {
             </div>
             <div className='right'>
                 <form onSubmit={handleSubmit} action="POST">
-                    <h2 id="login">hello👋, welcome !</h2>
+                    <h2 id="login">Hello👋, Welcome!</h2>
                     <label>
                         Enter your email:<br />
                         <input className='input-login' id="email" type="text" placeholder="Enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
@@ -37,13 +52,12 @@ export default function Register() {
 
                     <label>
                         Enter your name:<br />
-                        <input className="input-login" id="nickname" type="text" placeholder="Enter name" />
+                        <input className="input-login" id="nickname" type="text" placeholder="Enter name" onChange={(e)=>{setName(e.target.value)}}/>
                     </label>
 
-                    <input className="btn" value="register" id="btn" type="button" onClick={() => window.location.href = '/modes'} />
-                    {/* <Link to="/register"><a href=''>Not registered ? </a></Link> */}
+                    <input className="btn" value="Register" id="btn" type="submit" />
                 </form>
             </div>
         </div>
     )
-}
+};
