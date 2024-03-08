@@ -60,7 +60,7 @@ export default function Login() {
                     </label>
 
                     <input className="btn" value="Login" id="btn" type="button" onClick={handleLogin} />
-                    <Link to="/register"><a style={{color:"black", fontSize:"1.2vw"}} href=''>Not registered ? </a></Link>
+                    <Link to="/register"><a style={{color:"black", fontSize:"1.2vw"}}>Not registered ? </a></Link>
                 </form>
             </div>
         </div>

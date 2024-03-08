@@ -4,7 +4,8 @@ import '../styles/Operator.css'
 export default function Operator(props) {
 
     const handlePress = () => {
-        props.onClickPress();
+        console.log(props.sign)
+        props.onClickPress(props.sign);
     }
 
     return (

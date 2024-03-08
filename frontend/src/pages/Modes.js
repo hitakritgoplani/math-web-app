@@ -3,6 +3,7 @@ import '../styles/Modes.css'
 import Header from '../components/Header'
 
 export default function Modes() {
+    console.log(localStorage.getItem('token'));
     return (
         <div>
             <Header />

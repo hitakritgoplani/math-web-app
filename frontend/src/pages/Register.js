@@ -4,7 +4,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -19,8 +18,9 @@ export default function Register() {
                 name
             });
       
-            if (response.status === 200) {
+            if (response.data) {
                 console.log("Registration successful");
+                localStorage.setItem('token', response.data["token"]);
                 navigate("/modes");
             } else {
                 console.log(response.data);

@@ -1,0 +1,18 @@
+.settings-root{
+    height: 90vh;
+    width: 100%;
+    background-color: #EBD9B4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-of-rules{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-weight: bold;
+    font-style: italic;
+}

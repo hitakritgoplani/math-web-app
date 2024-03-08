@@ -6,9 +6,7 @@ export default function Answer(props) {
 
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            console.log(inputValue)
-            // Process the answer here, for now, let's just clear the input field
-            props.onEnterPressed();
+            props.onEnterPressed(inputValue);
             setInputValue('');
         }
     };
