@@ -74,6 +74,16 @@ app.post('/information-stats', async (req, res) => {
     }
 });
 
+app.get('/information-stats', async (req, res) => {
+    const { userToken } = req.query; // Use req.query to access query parameters
+    const user = await UsersModel.findOne({ userToken: userToken }); 
+    if(user){
+        console.log("sent")
+        res.json({correctAnswers: user.correctAnswers, inCorrectAnswers: user.inCorrectAnswers}).status(200)
+    } else {
+        res.status(404).json({ error: "User not found" });
+    }
+});
 
 
 const PORT = process.env.PORT || 3001;
