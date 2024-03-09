@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Add.css';
 import Question from '../components/Question';
 import Line from '../components/Line';
@@ -18,9 +20,15 @@ export default function Subtraction() {
     async function handleEnterPressed(inputValue) {
         if (inputValue) {
             if (question1 - question2 == inputValue) {
-                correct = true
+                correct = true;
+                toast.success("Correct !", {
+                    position: "top-right",
+                });
             } else {
-                correct = false
+                correct = false;
+                toast.error("Incorrect !", {
+                    position: "top-left"
+                });
             }
             await axios.post('http://localhost:3001/information-stats', {
                 userToken: localStorage.getItem('token'),
@@ -35,6 +43,7 @@ export default function Subtraction() {
     return (
         <div>
             <Header />
+            <ToastContainer autoClose={500} hideProgressBar/>
             <div className='add-root'>
                 <div style={{backgroundColor:"#EBD9B4"}} className='add-question'>
                     <Question number={question1}/>
