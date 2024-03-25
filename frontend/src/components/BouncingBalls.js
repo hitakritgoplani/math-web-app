@@ -10,7 +10,7 @@ const BouncingBalls = () => {
         const timeout = setTimeout(() => {
             // Redirect to '/modes' after loading animation completes
             history('/modes');
-        }, 2300); // Adjust the timeout duration as needed
+        }, 1650); // Adjust the timeout duration as needed
 
         // Cleanup function
         return () => clearTimeout(timeout);

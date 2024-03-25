@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Line from '../components/Line';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Answer from '../components/Answer';
 import axios from 'axios';
 import '../styles/PlayOnline.css';
@@ -10,6 +8,7 @@ import WordProblem from '../components/WordProblem';
 
 export default function PlayOnline() {
     const [question, setQuestion] = useState("Loading question");
+    const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
     var correct = false;
 
     async function generateRandomQuestion() {
@@ -33,29 +32,27 @@ export default function PlayOnline() {
             console.log(inputValue)
             if (inputValue === localStorage.getItem('answer')) {
                 correct = true;
-                toast.success("Correct !", {
-                    position: "top-right",
-                });
+                setIsCorrectAnswer(true);
             } else {
                 correct = false;
-                toast.error("Incorrect !", {
-                    position: "top-left"
-                });
+                setIsCorrectAnswer(false)
             }
             await axios.post('http://localhost:3001/information-stats', {
                 userToken: localStorage.getItem('token'),
                 correct: correct
             });
             correct = false;
+            await generateRandomQuestion();
+            setTimeout(() => {
+                setIsCorrectAnswer(null);
+            }, 400);
         } else {
             return;
         }
-        await generateRandomQuestion();
     }
     return (
         <div>
             <Header />
-            <ToastContainer autoClose={500} hideProgressBar />
             <div className='play-root'>
                 <div className='play-question'>
                     <WordProblem question={question} />
@@ -64,6 +61,11 @@ export default function PlayOnline() {
                 <div className='play-answer'>
                     <Answer styles={{ width: "10vw" }} onEnterPressed={handleEnterPressed} />
                 </div>
+                {isCorrectAnswer !== null && (
+                    <div className={`answer-feedback ${isCorrectAnswer ? 'correct' : 'incorrect'}`}>
+                        {isCorrectAnswer ? 'Correct!' : 'Incorrect!'}
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useEffect } from 'react';
 import '../styles/Add.css';
 import Question from '../components/Question';
 import Line from '../components/Line';
@@ -11,52 +9,56 @@ import axios from 'axios';
 export default function Add() {
     const [question1, setQuestion1] = useState(generateRandomNumber());
     const [question2, setQuestion2] = useState(generateRandomNumber());
+    const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
     var correct = false;
-    
+
     function generateRandomNumber() {
         return Math.floor(Math.random() * 100) + 1;
     }
-    
+
     async function handleEnterPressed(inputValue) {
         if (inputValue) {
-            if (question1 + question2 == inputValue) {
+            const sum = question1 + question2;
+            if (sum == inputValue) {
                 correct = true;
-                toast.success("Correct !", {
-                    position: "top-right",
-                });
+                setIsCorrectAnswer(true);
             } else {
                 correct = false;
-                toast.error("Incorrect !", {
-                    position: "top-left"
-                });
+                setIsCorrectAnswer(false);
             }
             await axios.post('http://localhost:3001/information-stats', {
                 userToken: localStorage.getItem('token'),
                 correct: correct
-            });
+            })
             correct = false;
-        }
-        else{
+            setQuestion1(generateRandomNumber());
+            setQuestion2(generateRandomNumber());
+            setTimeout(() => {
+                setIsCorrectAnswer(null);
+            }, 400);
+        } else {
             return;
         }
-        setQuestion1(generateRandomNumber());
-        setQuestion2(generateRandomNumber());
     }
 
     return (
-        <div> 
+        <div>
             <Header />
-            <ToastContainer autoClose={500} hideProgressBar/>
             <div className='add-root'>
                 <div className='add-question'>
                     <Question number={question1} />
-                    <div style={{ width:"10vw", textAlign: "center", textShadow: "black 5px 5px", color: "#EBD9B4", height: "inherit", fontSize: "15vw" }}><strong>&#43;</strong></div>
+                    <div className='plus'>+</div>
                     <Question number={question2} />
                 </div>
                 <Line />
                 <div className='add-answer'>
                     <Answer styles={{ width: "10vw" }} onEnterPressed={handleEnterPressed} />
                 </div>
+                {isCorrectAnswer !== null && (
+                    <div className={`answer-feedback ${isCorrectAnswer ? 'correct' : 'incorrect'}`}>
+                        {isCorrectAnswer ? 'Correct!' : 'Incorrect!'}
+                    </div>
+                )}
             </div>
         </div>
     );
