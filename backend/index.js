@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const UsersModel = require('./models/Users');
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+require('dotenv').config();
+const secretKey = process.env.API_KEY;
+const genAI = new GoogleGenerativeAI(secretKey);
 
 const app = express();
 app.use(express.json());
@@ -24,7 +28,9 @@ app.post('/login', async (req, res) => {
         if (!user || user.password !== password) {
             return res.status(401).json({ error: "Incorrect credentials" });
         }
-        const token = jwt.sign({ userId: user._id }, 'your_secret_key_here', { expiresIn: '1h' }); 
+        const token = jwt.sign({ userId: user._id }, 'your_secret_key_here', { expiresIn: '1h' });
+        user.userToken = token;
+        await user.save() 
         res.json({ token: token, message: "Success" }).status(200);
     } catch (error) {
         console.error("Error while logging in: ", error);
@@ -83,6 +89,20 @@ app.get('/information-stats', async (req, res) => {
     } else {
         res.status(404).json({ error: "User not found" });
     }
+});
+
+app.get('/word-problem', async (req, res) => {
+        // For text-only input, use the gemini-pro model
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const prompt = `Create a short(< 38 words), fun and engaging word problem for a child that incorporates elements of addition, subtraction, multiplication, and comparison. The word problem should be creative and age-appropriate, encouraging the child to apply mathematical concepts in a practical context. It should also be designed to stimulate critical thinking and problem-solving skills while being enjoyable for the child to solve. Please ensure that the word problem is clear, concise, and presents a relatable scenario that captures the child's interest. The problem should allow for multiple approaches to finding the solution, promoting flexibility and creativity in the child's mathematical reasoning.in the response only include the question without mentioning the topic and the correct answer after checking the answer twice in number format, without explaination in json format like {"question":"", "answer":""}`
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const jsonObject = JSON.parse(response.text());
+        const question = jsonObject.question;
+        const answer = jsonObject.answer;
+        console.log(question)
+        console.log(answer)
+        res.status(200).json({ question: question, answer: answer});
 });
 
 

@@ -10,6 +10,7 @@ import Settings from './pages/Settings';
 import Modes from './pages/Modes';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PlayOnline from './pages/PlayOnline';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
           <Route path="/addition" element={<Add/>} />
           <Route path="/multiplication" element={<Multiply/>} /> 
           <Route path='/subtraction' element={<Subtraction />} /> 
-          <Route path='/comparison' element={<Compare />} /> 
+          <Route path='/comparison' element={<Compare />} />
+          <Route path='/play-online' element={<PlayOnline />} />
           <Route path='/settings' element={<Settings />} />
         </Routes>
       </Router>

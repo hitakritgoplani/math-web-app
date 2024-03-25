@@ -1,0 +1,25 @@
+.play-root{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.play-question{
+	display: flex;
+	/* flex-direction: column; */
+    background-color: #EBD9B4;
+	justify-content: center;
+	align-items: center;
+    height: 50vh;
+	width: 100%;
+}
+
+.play-answer{
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    background-color: #9DBC98;
+    height: 40vh;
+	width: 100%;
+}

@@ -1,0 +1,12 @@
+.word-problem-root{
+    width: 90%;
+    height: 90%;
+    color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    text-align: center;
+}
+

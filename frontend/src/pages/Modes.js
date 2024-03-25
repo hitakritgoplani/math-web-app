@@ -3,7 +3,6 @@ import '../styles/Modes.css'
 import Header from '../components/Header'
 
 export default function Modes() {
-    console.log(localStorage.getItem('token'));
     return (
         <div>
             <Header />
@@ -11,7 +10,7 @@ export default function Modes() {
                 <div style={{ backgroundColor: "#a4bfc0" }} className='mode' onClick={() => window.location.href = '/home'}>
                     <h2>practice</h2>
                 </div>
-                <div style={{ backgroundColor: "#EBD9B4" }} className='mode'>
+                <div style={{ backgroundColor: "#EBD9B4" }} className='mode' onClick={() => window.location.href = '/play-online'}>
                     <h2>play online</h2>
                 </div>
             </div>
