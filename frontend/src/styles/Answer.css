@@ -4,8 +4,11 @@
     text-align: center;
     width: 35vw;
     height: 25vh;
-    font-size: 8rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size:8vw;
     /* font-weight: bold; */
     color: black;
     box-shadow: black -10px 10px;
@@ -13,7 +16,11 @@
 
 .answer-input::placeholder{
     color: grey;
-    font-size: 6rem;
+    font-size: 5vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center;  */
 }
 
 .answer-input::-webkit-outer-spin-button,

@@ -5,7 +5,10 @@
 	border-radius: 10px;
 	border: 1px solid #638889;
 	color: white;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
 	cursor: pointer;
     font-size: 5vw;
     /* border: 1px black solid; */

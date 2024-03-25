@@ -13,7 +13,7 @@ export default function Login() {
     useEffect(() => {
         const isAuthenticated = localStorage.getItem('token');
         if (isAuthenticated) {
-            navigate('/modes');
+            navigate('/bounce');
         }
     }, [navigate]);
 
@@ -28,7 +28,7 @@ export default function Login() {
             if (response.status === 200 && response.data["message"] === "Success") {
                 console.log("Login successful");
                 localStorage.setItem('token', response.data["token"]);
-                navigate('/modes');
+                navigate('/bounce');
             } else {
                 console.log(response.data);
                 alert("Login failed.");
@@ -44,7 +44,7 @@ export default function Login() {
             <div className='left'>
                 <h1><ReactTyped className='math' strings={text}  typeSpeed={190} backSpeed={190} cursorChar='' loop/>
                 </h1>
-                <span><ReactTyped className="cur" strings={[""]}  typeSpeed={190} backSpeed={190} cursorChar='|' loop/></span>
+                <span><ReactTyped className="cur" strings={[""]}  typeSpeed={190} backSpeed={190} cursorChar='_' loop/></span>
             </div>
             <div className='right'>
                 <form action="#">

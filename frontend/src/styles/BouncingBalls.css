@@ -1,0 +1,57 @@
+/* Loading.css */
+.loading-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main ball animation */
+.ball {
+    width: 100px;
+    height: 100px;
+    background-color: #9DBC98;
+    border-radius: 50%;
+    animation: zoomIn 5s ease-in-out infinite; /* Adjust animation duration and easing as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Inner circle styles */
+.inner-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #EBD9B4;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Keyframe animation for zooming in */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(50); /* Adjust the scale value for zoom effect */
+    }
+    100% {
+        transform: scale(100);
+    }
+}

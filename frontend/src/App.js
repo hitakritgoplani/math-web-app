@@ -11,6 +11,7 @@ import Modes from './pages/Modes';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PlayOnline from './pages/PlayOnline';
+import BouncingBalls from './components/BouncingBalls';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/comparison' element={<Compare />} />
           <Route path='/play-online' element={<PlayOnline />} />
           <Route path='/settings' element={<Settings />} />
+          <Route path='/bounce' element={<BouncingBalls />} />
         </Routes>
       </Router>
     </div>

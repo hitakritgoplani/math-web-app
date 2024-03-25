@@ -9,7 +9,8 @@ import '../styles/PlayOnline.css';
 import WordProblem from '../components/WordProblem';
 
 export default function PlayOnline() {
-    const [question, setQuestion] = useState("Loading question");    
+    const [question, setQuestion] = useState("Loading question");
+    var correct = false;
 
     async function generateRandomQuestion() {
         setQuestion("Loading new question")
@@ -23,32 +24,34 @@ export default function PlayOnline() {
         }
     }
 
-    useEffect( () => {
-        generateRandomQuestion(); 
-    },[])
+    useEffect(() => {
+        generateRandomQuestion();
+    }, [])
 
     async function handleEnterPressed(inputValue) {
-        const storedAnswer = localStorage.getItem('answer');
-        let correct = inputValue === storedAnswer;
-
-        if (correct) {
-            toast.success("Correct !", {
-                position: "top-right",
+        if (inputValue) {
+            console.log(inputValue)
+            if (inputValue === localStorage.getItem('answer')) {
+                correct = true;
+                toast.success("Correct !", {
+                    position: "top-right",
+                });
+            } else {
+                correct = false;
+                toast.error("Incorrect !", {
+                    position: "top-left"
+                });
+            }
+            await axios.post('http://localhost:3001/information-stats', {
+                userToken: localStorage.getItem('token'),
+                correct: correct
             });
+            correct = false;
         } else {
-            toast.error("Incorrect !", {
-                position: "top-left"
-            });
+            return;
         }
-
-        await axios.post('http://localhost:3001/information-stats', {
-            userToken: localStorage.getItem('token'),
-            correct: correct
-        });
-
-        generateRandomQuestion();
+        await generateRandomQuestion();
     }
-
     return (
         <div>
             <Header />

@@ -36,6 +36,9 @@ export default function Add() {
             });
             correct = false;
         }
+        else{
+            return;
+        }
         setQuestion1(generateRandomNumber());
         setQuestion2(generateRandomNumber());
     }
@@ -47,7 +50,7 @@ export default function Add() {
             <div className='add-root'>
                 <div className='add-question'>
                     <Question number={question1} />
-                    <div style={{ textAlign: "center", textShadow: "black 5px 5px", color: "#EBD9B4", height: "inherit", fontSize: "15vw" }}><strong>&#43;</strong></div>
+                    <div style={{ width:"10vw", textAlign: "center", textShadow: "black 5px 5px", color: "#EBD9B4", height: "inherit", fontSize: "15vw" }}><strong>&#43;</strong></div>
                     <Question number={question2} />
                 </div>
                 <Line />

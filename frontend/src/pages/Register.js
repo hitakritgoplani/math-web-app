@@ -21,7 +21,7 @@ export default function Register() {
             if (response.data) {
                 console.log("Registration successful");
                 localStorage.setItem('token', response.data["token"]);
-                navigate("/modes");
+                navigate("/bounce");
             } else {
                 console.log(response.data);
                 alert("Registration failed.");

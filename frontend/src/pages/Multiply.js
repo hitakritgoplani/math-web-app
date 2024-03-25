@@ -36,6 +36,9 @@ export default function Multiply() {
             })
             correct = false
         }
+        else{
+            return;
+        }
         setQuestion1(generateRandomNumber());
         setQuestion2(generateRandomNumber());
     }
@@ -47,7 +50,7 @@ export default function Multiply() {
             <div className='add-root'>
                 <div style={{backgroundColor:"#EBD9B4"}} className='add-question'>
                     <Question number={question1}/>
-                    <div style={{textAlign:"center", color:"#638889", textShadow:"black 5px 5px", height:"inherit", fontSize:"15vw"}}><strong>&times;</strong></div>
+                    <div style={{width:"10vw", textAlign:"center", color:"#638889", textShadow:"black 5px 5px", height:"inherit", fontSize:"15vw"}}><strong>&times;</strong></div>
                     <Question number={question2}/>
                 </div>
                 <Line />
