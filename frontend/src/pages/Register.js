@@ -46,6 +46,11 @@ export default function Register() {
                     </label>
 
                     <label>
+                        Enter parent's email:<br />
+                        <input className='input-login' id="parent-email" type="text" placeholder="Enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
+                    </label>
+
+                    <label>
                         Enter your password:<br />
                         <input className="input-login" id="password" type="password" placeholder="Enter password" onChange={(e)=>{setPassword(e.target.value)}}/>
                     </label>

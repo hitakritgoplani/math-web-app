@@ -6,6 +6,7 @@ import axios from 'axios';
 export default function Settings() {
     const [correct, setCorrect] = useState(0);
     const [incorrect, setIncorrect] = useState(0);
+    const [name, setName] = useState('');
 
     useEffect(() => {
         const fetchSettings = async () => {
@@ -15,6 +16,8 @@ export default function Settings() {
                 });
                 setCorrect(parseInt(response.data["correctAnswers"]));
                 setIncorrect(parseInt(response.data["inCorrectAnswers"]));
+                setName(response.data["name"])
+                console.log(response.data["name"])
             } catch (error) {
                 console.error('Error fetching settings:', error);
             }
@@ -35,7 +38,7 @@ export default function Settings() {
                     </ul>
                 </div>
                 <div className='settings'>
-                    <h1 style={{ fontStyle: "italic", textDecoration: "underline" }}>Your performance</h1><br />
+                    <h1 style={{ fontStyle: "italic", textDecoration: "underline" }}>{name}'s performance</h1><br />
                     <ul className='list-of-rules'>
                         <li>Questions correctly answered: {correct}</li>
                         <li>Questions incorrectly answered: {incorrect}</li>

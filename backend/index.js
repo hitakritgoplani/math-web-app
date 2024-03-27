@@ -85,7 +85,7 @@ app.get('/information-stats', async (req, res) => {
     const user = await UsersModel.findOne({ userToken: userToken }); 
     if(user){
         console.log("sent")
-        res.json({correctAnswers: user.correctAnswers, inCorrectAnswers: user.inCorrectAnswers}).status(200)
+        res.json({name: user.name, correctAnswers: user.correctAnswers, inCorrectAnswers: user.inCorrectAnswers}).status(200)
     } else {
         res.status(404).json({ error: "User not found" });
     }
