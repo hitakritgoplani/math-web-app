@@ -8,10 +8,10 @@ export default function Modes() {
             <Header />
             <div className='modes-root'>
                 <div style={{ backgroundColor: "#a4bfc0" }} className='mode' onClick={() => window.location.href = '/home'}>
-                    <h2>practice</h2>
+                    <h2>practice basics</h2>
                 </div>
                 <div style={{ backgroundColor: "#EBD9B4" }} className='mode' onClick={() => window.location.href = '/play-online'}>
-                    <h2>play online</h2>
+                    <h2>word problems</h2>
                 </div>
             </div>
         </div>
