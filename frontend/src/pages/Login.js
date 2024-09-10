@@ -7,7 +7,7 @@ export default function Login() {
     const [name, setName] = useState('');
     const [roll, setRoll] = useState('');
     const [standard, setStandard] = useState('');
-    const [division, setDivision] = useState('');
+    const [divison, setDivision] = useState('');
     const navigate = useNavigate();
     var isAuthenticated = false;
     
@@ -29,14 +29,14 @@ export default function Login() {
             const response = await axios.post('http://localhost:3001/login', {
                 roll,
                 standard,
-                division
+                divison
             });
       
             if (response.status === 200 && response.data.message === "Success") {
                 console.log("Login successful");
                 localStorage.setItem('roll', response.data.roll);
                 localStorage.setItem('standard', response.data.standard);
-                localStorage.setItem('divison', response.data.division);
+                localStorage.setItem('divison', response.data.divison);
                 navigate('/bounce');
             } 
         } catch (error) {
@@ -95,7 +95,7 @@ export default function Login() {
                         <select 
                             className='input-login' 
                             id="division" 
-                            value={division}
+                            value={divison}
                             onChange={(e) => setDivision(e.target.value)}
                             required
                         >

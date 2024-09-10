@@ -19,10 +19,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/math").then(() => {
 
 app.post('/login', async (req, res) => {
     try {
-        var { roll, standard, division } = req.body;
-        const user = await UsersModel.findOne({ standard: standard, division: division, rollNo: roll, });
+        var { roll, standard, divison } = req.body;
+        const user = await UsersModel.findOne({ standard: Number(standard), divison: divison, rollNo: Number(roll) });
         if(user){
-            res.status(200).json({ message: "Success", roll: roll, standard: standard, division: division});
+            res.status(200).json({ message: "Success", roll: roll, standard: standard, divison: divison});
         } else {
             res.status(400).json({ message: "Student details not found"});
         }
@@ -35,7 +35,7 @@ app.post('/login', async (req, res) => {
 app.post('/information-stats', async (req, res) => {
     try {
         const { roll, standard, divison, page, correct } = req.body;
-        const user = await UsersModel.findOne({ rollNo: roll, standard: standard, divison:divison }); 
+        const user = await UsersModel.findOne({ standard: Number(standard), divison: divison, rollNo: Number(roll) });
         if (!user) {
             return res.status(404).json({ error: "User not found" });
         }
