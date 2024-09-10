@@ -8,13 +8,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size:8vw;
+    font-size: 5.5rem;
     /* font-weight: bold; */
     color: black;
     box-shadow: black -10px 10px;
 }
 
 .answer-input::placeholder{
+    text-wrap:pretty;
+    font-size: 0.1rem;
     color: grey;
     font-size: 5vw;
     text-align: center;

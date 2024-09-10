@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ReactTyped } from 'react-typed';
 import axios from 'axios';
 import '../styles/Login.css';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const text = [".math"];
-    const navigate = useNavigate(); // Import useNavigate from 'react-router-dom'
-
+    const [name, setName] = useState('');
+    const [roll, setRoll] = useState('');
+    const [standard, setStandard] = useState('');
+    const [division, setDivision] = useState('');
+    const navigate = useNavigate();
+    var isAuthenticated = false;
+    
     useEffect(() => {
-        const isAuthenticated = localStorage.getItem('token');
+        const roll = localStorage.getItem('roll');
+        const std = localStorage.getItem('standard');
+        const div = localStorage.getItem('divison');
+        if(roll && std && div){
+            isAuthenticated = true;
+        }
         if (isAuthenticated) {
             navigate('/bounce');
         }
@@ -21,18 +27,18 @@ export default function Login() {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3001/login', {
-                email,
-                password
+                roll,
+                standard,
+                division
             });
       
-            if (response.status === 200 && response.data["message"] === "Success") {
+            if (response.status === 200 && response.data.message === "Success") {
                 console.log("Login successful");
-                localStorage.setItem('token', response.data["token"]);
+                localStorage.setItem('roll', response.data.roll);
+                localStorage.setItem('standard', response.data.standard);
+                localStorage.setItem('divison', response.data.division);
                 navigate('/bounce');
-            } else {
-                console.log(response.data);
-                alert("Login failed.");
-            }
+            } 
         } catch (error) {
             console.error(error);
             alert("Invalid credentials");
@@ -41,26 +47,67 @@ export default function Login() {
 
     return (
         <div className='root'>
-            <div className='left'>
-                <h1><ReactTyped className='math' strings={text}  typeSpeed={190} backSpeed={190} cursorChar='' loop/>
-                </h1>
-                <span><ReactTyped className="cur" strings={[""]}  typeSpeed={190} backSpeed={190} cursorChar='_' loop/></span>
+            <div className='top-login'>
+                <div className='heading-root'>
+                    <h1 className='heading'>Number Ninjas</h1>
+                </div>
             </div>
-            <div className='right'>
-                <form action="#">
-                    <h2 id="login">Hello👋, Welcome back !</h2>
+            <div className='bottom-login'>
+                <form className='login-form' onSubmit={handleLogin}>                    
                     <label>
-                        Enter your email:<br />
-                        <input className='input-login' id="email" type="text" placeholder="Enter email" onChange={(e)=>{setEmail(e.target.value)}}/>
+                        Enter your name:<br />
+                        <input 
+                            className='input-login' 
+                            id="name" 
+                            type="text" 
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+                    </label>
+                    
+                    <label>
+                        Enter your roll number:<br />
+                        <input 
+                            className='input-login' 
+                            id="roll" 
+                            type="number" 
+                            value={roll}
+                            onChange={(e) => setRoll(e.target.value)}
+                            required
+                        />
                     </label>
 
                     <label>
-                        Enter your password:<br />
-                        <input className="input-login" id="password" type="password" placeholder="Enter password" onChange={(e)=>{setPassword(e.target.value)}}/>
+                        Enter your standard:<br />
+                        <input 
+                            className='input-login' 
+                            id="standard" 
+                            type="number" 
+                            value={standard}
+                            onChange={(e) => setStandard(e.target.value)}
+                            required
+                            />
                     </label>
 
-                    <input className="btn" value="Login" id="btn" type="button" onClick={handleLogin} />
-                    <Link to="/register"><a style={{color:"black", fontSize:"1.2vw"}}>Not registered ? </a></Link>
+                    <label>
+                        Select your division:<br />
+                        <select 
+                            className='input-login' 
+                            id="division" 
+                            value={division}
+                            onChange={(e) => setDivision(e.target.value)}
+                            required
+                        >
+                            <option value="">Select Division</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </label>
+
+                    <button className="btn" id="btn" type="submit">Next</button>
                 </form>
             </div>
         </div>

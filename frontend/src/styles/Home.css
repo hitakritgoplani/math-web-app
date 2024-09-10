@@ -10,12 +10,12 @@
     flex-direction: column;
 }
 
-.top{
+.home-top{
     display: flex;
     height: 100%;
 }
 
-.bottom{
+.home-bottom{
     display: flex;
     height: 100%;
 }

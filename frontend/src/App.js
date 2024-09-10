@@ -1,17 +1,17 @@
 import './App.css';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Add from './pages/Add';
-import Multiply from './pages/Multiply';
-import Compare from './pages/Comparison';
 import Subtraction from './pages/Subtraction';
+import Compare from './pages/Comparison';
+import Multiply from './pages/Multiply';
+import Divison from './pages/Divison';
 import Settings from './pages/Settings';
 import Modes from './pages/Modes';
+import BouncingBalls from './components/BouncingBalls';
+import PlayOnline from './pages/PlayOnline';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PlayOnline from './pages/PlayOnline';
-import BouncingBalls from './components/BouncingBalls';
 
 function App() {
   return (
@@ -19,12 +19,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path='/modes' element={<Modes />} />
+          <Route path="/modes" element={<Modes />} />
           <Route path="/home" element={<Home/>} />
           <Route path="/addition" element={<Add/>} />
           <Route path="/multiplication" element={<Multiply/>} /> 
+          <Route path="/divison" element={<Divison/>} /> 
           <Route path='/subtraction' element={<Subtraction />} /> 
           <Route path='/comparison' element={<Compare />} />
           <Route path='/play-online' element={<PlayOnline />} />

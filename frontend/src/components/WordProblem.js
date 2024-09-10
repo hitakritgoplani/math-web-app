@@ -4,7 +4,7 @@ import '../styles/WordProblem.css'
 export default function WordProblem(props) {
   return (
     <div className='word-problem-root'>
-      <h1>{props.question}</h1>
+        <p className='word-problem-question'>{props.question}</p>
     </div>
   )
 }

@@ -9,15 +9,14 @@
 
 .compare-question{
 	display: flex;
-	/* flex-direction: column; */
 	justify-content: center;
 	align-items: center;
-	background-color: #EBD9B4;
+	background-color: #fff;
 	width: 50%;
 }
 
 #one{
-    background-color: #9DBC98;
+    background: #fff
 }
 
 .signs{

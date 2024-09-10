@@ -1,106 +1,130 @@
-/* Base styles */
-.root {
+.root{
+    height: 100dvh;
+    background: #f8f5e6;
+    width: 100dvw;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-color: #F9EFDB;
-    font-weight: normal;
-  }
-  
-  /* Left section styles */
-  .left {
-    width: 50%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-  }
-  
-  /* Right section styles */
-  .right {
-    width: 50%;
-    height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-#login{
-    font-size: 1.5rem;
 }
 
-  /* Form styles */
-  form {
-    background-color: #a4bfc0;
-    font-weight: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-  }
-  
-  /* Text styles for labels and headings */
-  label {
-    font-weight: normal;
-    color: #000000;
-    font-size: 1.1vw; /* Increased font size */
-  }
+.top-login{
+    height: 10dvh;
+    margin-top: 7dvh;
+}
 
-  /* Login input styles */
-  .input-login {
-    width: 25vw;
-    height: 3vh; /* Increased height */
-    border: 2px solid black;
-    border-radius: 10px;
-    margin-top: 1vh; /* Increased margin */
-    padding: 10px; 
-    background-color: white;
-    font-size: 1rem; /* Increased font size */
-  }
-  
-  /* Placeholder styles */
-  ::placeholder {
-    color: grey;
-    /* padding: 5px; Increased padding */
-  }
-  
-  /* Button styles */
-  .btn {
-    font-size: 1.2rem; /* Use a more descriptive unit like rem */
+.heading{
     color: black;
-    background-color: #ffd47d;
-    border: 2px solid #000;
-    width: 16vw;
-    height: 7vh;
-    border-radius: 50px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+.bottom-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90dvh;
+    width: 100dvw;
+}
+
+.login-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+label{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.input-login {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.input-login:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.input-login::-webkit-inner-spin-button, 
+.input-login::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+select.input-login {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 12px auto;
+    padding-right: 35px;
+}
+
+option{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #ffbc36;
-  }
-  
-  /* Large text styles */
-  .cur {
-    font-size: 8rem;
-  }
-  
-  /* Media query for smaller screens */
-  @media screen and (max-width: 768px) {
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 1rem;
+    font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.btn:hover {
+    background-color: #357ae8;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
     .root {
-      flex-direction: column;
+        padding: 10px;
     }
-  
-    .left,
-    .right {
-      width: 100%;
-      height: 50%;
+
+    .login-form {
+        padding: 1.5rem;
     }
-  }
-  
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .input-login, .btn {
+        font-size: 0.95rem;
+    }
+}

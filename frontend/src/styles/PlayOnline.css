@@ -9,9 +9,10 @@
 }
 
 .play-question{
+    font-size: 5rem;
 	display: flex;
 	/* flex-direction: column; */
-    background-color: #EBD9B4;
+    background-color: #fff;
 	justify-content: center;
 	align-items: center;
     height: 50vh;
@@ -23,7 +24,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    background-color: #9DBC98;
+    background-color: #fff;
     height: 40vh;
 	width: 100%;
 }

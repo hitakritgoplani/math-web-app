@@ -9,12 +9,12 @@
 }
 
 .add-question {
+    width: 60%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 50vh;
-    background-color: #9DBC98;
-    width: 100%;
+    background: #fff;
 }
 
 .add-answer {
@@ -22,7 +22,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #EBD9B4;
+    background-color: #fff;
     height: 40vh;
     width: 100%;
 }
@@ -31,7 +31,7 @@
     width: 10vw;
     text-align: center;
     text-shadow: black 5px 5px;
-    color: #EBD9B4;
+    color: #c8c8c8;
     height: inherit;
     font-size: 15vw;
 }

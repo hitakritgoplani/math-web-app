@@ -26,7 +26,10 @@ export default function Multiply() {
                 setIsCorrectAnswer(false);
             }
             await axios.post('http://localhost:3001/information-stats', {
-                userToken: localStorage.getItem('token'),
+                roll: localStorage.getItem('roll'),
+                standard: localStorage.getItem('standard'),
+                divison: localStorage.getItem('divison'),
+                page: "Multiplication",
                 correct: correct
             })
             correct = false
@@ -45,13 +48,13 @@ export default function Multiply() {
         <div>
             <Header />
             <div className='add-root'>
-                <div style={{ backgroundColor: "#EBD9B4" }} className='add-question'>
+                <div style={{ backgroundColor: "#fff" }} className='add-question'>
                     <Question number={question1} />
-                    <div style={{ width: "10vw", textAlign: "center", color: "#638889", textShadow: "black 5px 5px", height: "inherit", fontSize: "15vw" }}><strong>&times;</strong></div>
+                    <div style={{ width: "10vw", textAlign: "center", color: "#c8c8c8", textShadow: "black 5px 5px", height: "inherit", fontSize: "15vw" }}><strong>&times;</strong></div>
                     <Question number={question2} />
                 </div>
                 <Line />
-                <div style={{ backgroundColor: "#9DBC98" }} className='add-answer'>
+                <div style={{ backgroundColor: "#fff" }} className='add-answer'>
                     <Answer styles={{ width: "10vw" }} onEnterPressed={handleEnterPressed} />
                 </div>
                 {isCorrectAnswer !== null && (

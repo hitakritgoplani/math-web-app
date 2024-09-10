@@ -9,44 +9,39 @@ export default function Comparison() {
     const [question1, setQuestion1] = useState(generateRandomNumber());
     const [question2, setQuestion2] = useState(generateRandomNumber());
     const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
-    var flag = 0;
-    var correct = false;
-
 
     function generateRandomNumber() {
         return Math.floor(Math.random() * 100) + 1;
     }
 
-     async function handleClickPressed(sign) {
-        if(question1 < question2 && sign == "<"){
+    async function handleClickPressed(sign) {
+        let correct = false;
+
+        if (question1 < question2 && sign === "<") {
             correct = true;
-            setIsCorrectAnswer(true);
-            flag = 1;
-        }
-        if(question1 > question2 && sign == ">"){
+        } else if (question1 > question2 && sign === ">") {
             correct = true;
-            setIsCorrectAnswer(true);
-            flag = 1;
-        }
-        if(question1 == question2 && sign == "="){
+        } else if (question1 === question2 && sign === "=") {
             correct = true;
-            setIsCorrectAnswer(true);
-            flag = 1;
         }
-        if(!flag){
-            setIsCorrectAnswer(false);
-        }
+
+        setIsCorrectAnswer(correct);
+
         await axios.post('http://localhost:3001/information-stats', {
-            userToken: localStorage.getItem('token'),
+            roll: localStorage.getItem('roll'),
+            standard: localStorage.getItem('standard'),
+            divison: localStorage.getItem('divison'),
+            page: "Comparison",
             correct: correct
-        })
-        correct = false;
+        });
+
         setTimeout(() => {
             setIsCorrectAnswer(null);
+            setQuestion1(generateRandomNumber());
+            setQuestion2(generateRandomNumber());
         }, 400);
-        setQuestion1(generateRandomNumber());
-        setQuestion2(generateRandomNumber());
     }
+
     return (
         <div>
             <Header />
@@ -56,9 +51,9 @@ export default function Comparison() {
                 </div>
 
                 <div className='signs'>
-                    <Operator sign="&lt;" onClickPress={handleClickPressed} />
-                    <Operator sign="=" onClickPress={handleClickPressed}/>
-                    <Operator sign="&gt;" onClickPress={handleClickPressed}/>
+                    <Operator sign="&lt;" onClickPress={() => handleClickPressed("<")} />
+                    <Operator sign="=" onClickPress={() => handleClickPressed("=")}/>
+                    <Operator sign="&gt;" onClickPress={() => handleClickPressed(">")}/>
                 </div>
 
                 <div className='compare-question' id='two'>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/Add.css';
 import Question from '../components/Question';
 import Line from '../components/Line';
@@ -19,7 +19,7 @@ export default function Add() {
     async function handleEnterPressed(inputValue) {
         if (inputValue) {
             const sum = question1 + question2;
-            if (sum == inputValue) {
+            if (sum === Number(inputValue)) {
                 correct = true;
                 setIsCorrectAnswer(true);
             } else {
@@ -27,7 +27,10 @@ export default function Add() {
                 setIsCorrectAnswer(false);
             }
             await axios.post('http://localhost:3001/information-stats', {
-                userToken: localStorage.getItem('token'),
+                roll: localStorage.getItem('roll'),
+                standard: localStorage.getItem('standard'),
+                divison: localStorage.getItem('divison'),
+                page: "Addition",
                 correct: correct
             })
             correct = false;
