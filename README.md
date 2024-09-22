@@ -1,4 +1,4 @@
-## Number Ninjas (math-web-app)
+## 🥷 Number Ninjas (math-web-app)
 
 **Project Overview**: This is a web-based math quiz app to help students practice and improve their math skills. It offers a variety of math problems, including addition, subtraction, multiplication, division, comparison. Also there are word problems that are generated using GenAI (Google Gemini). The app features user-friendly interfaces for both students and teachers (Under Development).
 
