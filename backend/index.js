@@ -75,15 +75,15 @@ app.get('/get-report', async (req, res) => {
 
 app.get('/word-problem', async (req, res) => {
     // For text-only input, use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const prompt = `Create a short 15 words, easy, different story, fun and creative word problem using real life scenarios for children that is based on either of the following addition, subtraction, multiplication, divison, and comparison. In the response only include the question without mentioning the topic and provide the correct answer after verifying the answer, in number format, without explaination in json format like {"question":"", "answer":""}`
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const prompt = `Create a short 15 words, easy, fun and creative word problem using real life scenarios for children that is based on either on addition, subtraction, multiplication, divison and comparison. In the response only include the question without mentioning the topic and provide the correct answer after verifying the answer. Give the response in the format mentioned. Format - {"question":"", "answer":""}`
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const jsonObject = JSON.parse(response.text());
     const question = jsonObject.question;
     const answer = jsonObject.answer;
-    console.log(question)
-    console.log(answer)
+    console.log(response.text());
+    // console.log(answer)
     res.status(200).json({ question: question, answer: answer});
 });
 
